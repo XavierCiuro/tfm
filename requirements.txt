@@ -1,0 +1,4 @@
+#TFM Xarxes neuronals informades per la física per la predicció 
+#de l'evapotranspiració de referència i real, l'estrès hídric en cultius 
+#i l'impacte de les onades de calor en el rendiment
+
