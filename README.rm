@@ -1,0 +1,51 @@
+Evaluació de models de xarxa neuronals inforamdes per la físca per la predicció de la evapotransporació de referència amb dades meteorològiques limitades a Catalunya, 
+i la predicció de l'index d'estress hidric sol/vegetació (TVDI) al cultiu de l'avellaner al Camp de Tarragona amb únicament amb dades meteorológiques.
+
+CONJUNT DE DADES DE ENTRADA:
+
+Conjunt de dades per la predicció de la Evapotraspiració de referencia:
+
+- data_EVO : Conjunt de dade meteorologiques de 14 estacions (EMA) classicades per carpetes/tipus de clima. Freqüència dades diaria.
+
+
+Conjunt de dades per la predicció del TVDI:
+
+ - data_EAM_constanti_hora :  Conjunts de dades meteorologiques de l'estació EAM Cosntanti. Freqüencia hora.
+ - data_EAM_riudoms_hora :  Conjunts de dades meteorologiques de l'estació EAM Riudoms/Riudecanyes. Freqüencia hora.
+  - data_EAM_vilarodona_hora :  Conjunts de dades meteorologiques de l'estació EAM Vilarodona. Freqüencia hora.
+
+- data/cultius.csv : Conjunt de dades sobre superfícies de cultiu avellaner a les comarques Alt Camp, Bai Camp i Tarrgonés, entre els anys 2016 - 2024.
+
+ - LST_NDVI_GEE_1 : dades de satel·lit LST i NDVI extretes de GEE, de les coordenades sel·leccionades del conjunt de dades de cultius. 
+
+
+PREDICCIÓ EVAPOTRANSPIRACIÓ:
+
+ - ETL_EVO.ipymb : Càrrega de dades, neteja, trasnformació i generació del conjunt de dades per l'entrada als models: data/EVO.csv
+
+- ANALISIS_DATA_EVO : Anàlsis correlació variables pels models de predicció de la ETo.
+
+ - EVO_P_PINN.ipynb : Model predictiu ETo amb dades d'entrada de Tm, Tmax, R i categòriques de clima i dia de l'any i funció física informada Priestley-Taylor
+	- Evaluació de rang de valors de ponderació de la funció física (theta) 
+
+ - EVO_P_PINN_simple.ipynb : Model predictiu ETo amb dades d'entrada de T, R i funció física informada Priestley-Taylor
+	- Evaluació de rang de valors de ponderació de la funció física (theta)
+
+
+ - EVO_H_PINN.ipynb : Model predictiu ETo amb dades d'entrada de T, Tmax, Tmin, i categòriques de clima i dia de l'any i funció física informada Hargreaves-Samani
+	- Evaluació de rang de valors de ponderació de la funció física (theta) 
+
+
+
+PREDICCIÓ TVDI:
+
+- ETL_TVDI.ipymb : Càrrega de dades, neteja, transformació i generació del conjunt de dades per d'entrada per ANALISIS_DADA_TVDI.ipymv  --  data/TVDI_model.csv
+	*Generació de les coordenades d'entrada per extracció de dades de satèl·lit de GEE data/gee_points_1.csv
+
+- script_GEE.java - Codi java, per l'extracció de les dades de satèl·lit de GEE, i generació d'arxiu /data/LST_NDVI_GEE_1.csv, per entrada a ETL_TVDI_ipymb.
+
+- ANALISIS_DATA_TVDI.ipymb : Anàlisis i correlació variables pels models de predicció de la TVDI i creació de variables addicionals a partir de dades del cultiu a estudi. Generació de conjunt de dades d'entrada pel model de predicció: data/TVDI_model_clear.csv
+
+- TVDI_PINN_FINAL.ipynb : Model xarxa neuronal informada per la física amb restricción físiques de monotonicitat, amb possibilitat d'evaluació segons ponderació de cada restricció.  
+
+
