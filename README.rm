@@ -49,3 +49,7 @@ PREDICCIÓ TVDI:
 - TVDI_PINN_FINAL.ipynb : Model xarxa neuronal informada per la física amb restricción físiques de monotonicitat, amb possibilitat d'evaluació segons ponderació de cada restricció.  
 
 
+RESULTATS:
+
+resultats.ipynb : Càrrega d'arxius de resulats en .csv de la carpeta \results i creció de gràfiques de barres amb resultats dels difrentes models. 
+
