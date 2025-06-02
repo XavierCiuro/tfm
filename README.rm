@@ -3,12 +3,12 @@ i la predicció de l'index d'estress hidric sol/vegetació (TVDI) al cultiu de l
 
 CONJUNT DE DADES DE ENTRADA:
 
-Conjunt de dades per la predicció de la Evapotraspiració de referencia:
+*Conjunt de dades per la predicció de la Evapotraspiració de referencia:
 
 - data_EVO : Conjunt de dade meteorologiques de 14 estacions (EMA) classicades per carpetes/tipus de clima. Freqüència dades diaria.
 
 
-Conjunt de dades per la predicció del TVDI:
+*Conjunt de dades per la predicció del TVDI:
 
  - data_EAM_constanti_hora :  Conjunts de dades meteorologiques de l'estació EAM Cosntanti. Freqüencia hora.
  - data_EAM_riudoms_hora :  Conjunts de dades meteorologiques de l'estació EAM Riudoms/Riudecanyes. Freqüencia hora.
