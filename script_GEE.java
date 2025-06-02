@@ -1,3 +1,5 @@
+// Codi creat amb recomanador de Gemini.
+
 var punts = ee.FeatureCollection('projects/tfmxcp/assets/gee_points');
 
 var puntsAmbDades = punts.map(function(feature) {
